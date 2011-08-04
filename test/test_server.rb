@@ -208,7 +208,7 @@ module OpenID
       begin
         result = @decode.call(args)
       rescue ArgumentError => err
-        assert(!err.to_s.index('values').nil?, err)
+        assert(!err.to_s.index('values').nil?, err.inspect)
       else
         flunk("Expected ArgumentError, but got result #{result}")
       end
@@ -1008,7 +1008,7 @@ module OpenID
       assert(webresponse.headers.has_key?('location'))
       location = webresponse.headers['location']
       query = Util.parse_query(URI::parse(location).query)
-      assert(!query.has_key?('openid.sig'), response.fields.to_post_args())
+      assert(!query.has_key?('openid.sig'), response.fields.to_post_args().inspect)
     end
 
     def test_assocReply
