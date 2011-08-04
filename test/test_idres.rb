@@ -61,7 +61,7 @@ module OpenID
         # test all missing fields for OpenID 1 and 2
         1.times do
           [["openid1", OPENID1_NS, OPENID1_FIELDS],
-           ["openid1", OPENID11_NS, OPENID1_FIELDS],
+           ["openid11", OPENID11_NS, OPENID1_FIELDS],
            ["openid2", OPENID2_NS, OPENID2_FIELDS],
           ].each do |ver, ns, all_fields|
             all_fields.each do |field|
@@ -82,7 +82,7 @@ module OpenID
         # Test all missing signed for OpenID 1 and 2
         1.times do
           [["openid1", OPENID1_NS, OPENID1_FIELDS, OPENID1_SIGNED],
-           ["openid1", OPENID11_NS, OPENID1_FIELDS, OPENID1_SIGNED],
+           ["openid11", OPENID11_NS, OPENID1_FIELDS, OPENID1_SIGNED],
            ["openid2", OPENID2_NS, OPENID2_FIELDS, OPENID2_SIGNED],
           ].each do |ver, ns, all_fields, signed_fields|
             signed_fields.each do |signed_field|
